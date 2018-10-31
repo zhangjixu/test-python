@@ -1,0 +1,8 @@
+安装的包
+pip3 install DBUtils -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+
+pip3 install pymysql -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+
+pip3 install pymongo -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+
+pip3 install arrow -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
