@@ -3,6 +3,7 @@
 
 from logger import log
 
+
 def is_exist(json):
     flag = False
     arr = ['sin_id', 'model_id']
