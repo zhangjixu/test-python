@@ -6,3 +6,11 @@ pip3 install pymysql -i http://pypi.douban.com/simple --trusted-host pypi.douban
 pip3 install pymongo -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
 
 pip3 install arrow -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+
+pip3 install py2neo -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+
+pip3 install ipython -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+
+pip3 install mysql-connector -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com
+
+pip3 install scrapy -i http://pypi.douban.com/simple --trusted-host pypi.douban.com

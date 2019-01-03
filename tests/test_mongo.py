@@ -1,16 +1,14 @@
 import pymongo
 import time
-from Mysql import MysqlHelper
 from bson.objectid import ObjectId
+from db.OpsMysql import OpsMysql
 
 DATETIME_FORMAT = '%Y%m%d %H:%M'
 
 client = pymongo.MongoClient(host='10.76.88.22', port=26301)
+mysql = OpsMysql()
 # 指定数据库
 db = client['model']
-
-# 申请资源
-mysqlHelper = MysqlHelper()
 
 
 def query(json):
@@ -97,8 +95,8 @@ if __name__ == '__main__':
             print('parse document exception : ' + e)
             continue
         sql = sql_key[0:len(sql_key) - 1] + sql_values + ")"
-        # mysqlHelper.save(sql)
+        print(sql)
+        # mysql.save(sql)
 
     end_ts = time.time() - start_ts
-    # mysqlHelper.close()
     print("cost time : " + str(end_ts) + " ms")

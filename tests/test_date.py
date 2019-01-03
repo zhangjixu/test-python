@@ -16,7 +16,8 @@ def ts_str(ts):
 
 
 if __name__ == '__main__':
-    print(parse_str('20180909'))
+    print()
+    print(parse_str('20180901'))
     print(ts_str(1536422400))
     print(round(23.23, 1))
     print(round(23.67))

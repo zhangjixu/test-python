@@ -2,6 +2,27 @@
 # -*- coding: UTF-8 -*-
 
 from logger import log
+import re
+import random
+from utils import MySQLUtils
+from db.OpsMysql import OpsMysql
+from tests.Student import Student
+import sys
+
+row = 3
+
+
+def f1(a, b):
+    """
+
+    Args:
+        a (list[int]):
+        b (str):
+
+    Returns:
+
+    """
+    pass
 
 
 def is_exist(json):
@@ -28,15 +49,38 @@ def args(name, age):
     print(age)
 
 
+def exce():
+    # raise ValueError('pool_size must >= 0')
+    pass
+
+
+def genera():
+    for i in range(2):
+        yield i
+        print(' ============== ' + str(i))
+    return 'ooo'
+
+
+def outer(k):
+    def inner(x):
+        return k * x + 5
+
+    return inner
+
+
+def out(fun):
+    def inner():
+        print(fun.__name__)
+        fun()
+        return 'sss'
+
+    return inner
+
+
+@out
+def mk():
+    print('success')
+
+
 if __name__ == '__main__':
-    log.info('张三')
-    # 这是一个注释
-    '''
-    这是一个多行注释
-    '''
-    """
-    这是一个多行注释
-    """
-    # json = {'a': 1, 'b': None}
-    # print(json['b'] == None)
-    # print('python 字符串拼接:' + '%s %s' %('ss', 12))
+    stu = Student('s', 19)
