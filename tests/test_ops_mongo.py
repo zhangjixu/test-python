@@ -1,10 +1,11 @@
 import pymongo
+import time
 from bson.objectid import ObjectId
 from utils.MongoUtils import MongoUtils
 
 
 def query():
-    client = pymongo.MongoClient(host='10.76.2.3:27017,10.76.2.4:27017')
+    client = pymongo.MongoClient(host='')
     # 指定数据库
     db = client['transfer_rpt']
     collection = db.rpt_contacts
@@ -17,7 +18,7 @@ def query():
 
 
 def query_1():
-    collection = MongoUtils('192.168.16.198:27017', 'test', 'user').getMongo()
+    collection = MongoUtils('', 'test', 'user').getMongo()
     document = {'_id': ObjectId('5bebe7e1d953ca91c44c3b84')}
     cursor = collection.find(document)
     for doc in cursor:
@@ -41,4 +42,6 @@ def call(i):
 
 
 if __name__ == '__main__':
+    stri = '{"name":{"type":"姓名"}}'
     query_1()
+    time.sleep(1)
