@@ -1,3 +1,8 @@
+import collections
+from types import MappingProxyType
+from dis import dis
+
+
 def test():
     """
     元组的话，只有当一个元组包含的所有元素 都是可散列类型的情况下，它才是可散列的。
@@ -28,5 +33,44 @@ def test1():
     print(dic)
 
 
+def test2():
+    """
+    字典变种
+    Returns:
+
+    """
+    # 这个映射类型会给键准备一个整数计数器。每次更新一个键的时候 都会增加这个计数器
+    ct = collections.Counter('abracadabra')
+    print(ct)
+
+    ct.update('aaaaazzz')
+    print(ct)
+
+    # most_common([n]) 会按照次 序返回映射里最常见的 n 个键和它们的计数
+    print(ct.most_common(2))
+
+
+def test3():
+    """
+    不可变映射类型
+    Returns:
+
+    """
+    d = {1: 'A'}
+    #  d 中的内容可以通过 d_proxy 看到。
+    d_proxy = MappingProxyType(d)
+    print(d_proxy)
+
+    # 会报错
+    # 通过 d_proxy 并不能做任何修改。
+    # d_proxy[2] = 'x'
+
+    # d_proxy 是动态的，也就是说对 d 所做的任何改动都会反馈到它上 面。
+    d[2] = 'B'
+    print(d_proxy)
+
+
 if __name__ == '__main__':
-    test1()
+    test3()
+    dis('{1}')
+    print(test3.__doc__)

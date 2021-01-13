@@ -73,5 +73,18 @@ def test_sort():
     print(fruits)
 
 
+def test2():
+    fruits = ['strawberry', 'fig', 'apple', 'cherry', 'raspberry', 'banana']
+    print(fruits[::-1])
+    print(sorted(fruits, key=lambda word: word[::-1]))
+
+
+def test3():
+    list1 = [1, 2]
+    list2 = list(list1)
+    print(list2)
+
+
 if __name__ == '__main__':
-    test_sort()
+    test3()
+    print(test2.__defaults__)
